@@ -1,0 +1,213 @@
+body {
+    background: linear-gradient(236deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vH;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#transparent-rectangle {
+    height: 20rem;
+    width: 40rem;
+    margin: 0 1rem;
+    background: rgba(255, 255, 255, 0.20);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: absolute;
+}
+
+
+#div-with-circle {
+    float: inline-start;
+}
+
+#div-with-circle,
+#input-div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    height: 80%;
+}
+
+#input-div {
+    float: inline-end;
+    flex-direction: column;
+    align-content: center;
+    padding: 1rem;
+}
+
+
+#title,
+#smaller-title {
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.70);
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding-top: 1rem;
+    display: block;
+}
+
+#smaller-title {
+    display: none;
+}
+
+.blob {
+    border-radius: 50%;
+    position: relative;
+    background: linear-gradient(236deg, rgb(224, 170, 194) 0%, rgb(136, 177, 223) 100%);
+    backdrop-filter: blur(1.5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5.5px);
+}
+
+@media screen and (max-width:600px) {
+
+    #title {
+        display: none;
+    }
+
+    #smaller-title {
+        padding-top: 1rem;
+        font-size: 1.4rem;
+        display: block;
+    }
+
+    #transparent-rectangle {
+        height: 30rem;
+        width: 20rem;
+        flex-wrap: wrap;
+        display: flex;
+    }
+
+    #div-with-circle {
+        flex-basis: 100%;
+        flex-direction: column;
+        height: 15rem;
+    }
+
+    #input-div {
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        height: 10rem;
+        padding: 0;
+    }
+}
+
+input {
+    height: 1.8rem;
+    margin-top: 1rem;
+    width: 90%;
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, 0.40);
+}
+
+#input-div button {
+    padding: 2% 3%;
+    margin-top: 1.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px #a05f8f solid;
+    color: #a05f8f;
+    width: 90%;
+}
+
+#input-div button:hover {
+    background-color: #c994bb;
+    border-color: transparent;
+    color: #FFFFFF;
+}
+
+#circle {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    align-self: center;
+    margin-top: 1rem;
+    background-color: #c994bb;
+    border: 1px solid whitesmoke;
+}
+
+.blob-two {
+    height: 11rem;
+    width: 10.6rem;
+    border-radius: 53% 70% 60% 70%;
+
+}
+
+.blob-one {
+    height: 9rem;
+    width: 9rem;
+    top: 12rem;
+    left: 40rem;
+    z-index: -1;
+}
+
+@media screen and (min-width:1270px) {
+
+    .blob-one {
+        top: 12rem;
+        left: 40rem;
+    }
+
+    .blob-two {
+        top: -20rem;
+        right: 20rem;
+    }
+
+    .blob-three {
+        height: 7.5rem;
+        width: 7.5rem;
+        top: -5rem;
+        right: 46rem;
+    }
+
+    .blob-four {
+        height: 11rem;
+        width: 11rem;
+        border-radius: 70% 60% 70% 60%;
+        top: 15rem;
+        right: 50rem;
+    }
+
+    .blob-five {
+        height: 11rem;
+        width: 11.6rem;
+        border-radius: 80% 70% 80% 60%;
+        top: -15rem;
+        right: -15rem;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .blob-one {
+        top: 15rem;
+        left: 10rem;
+    }
+
+    .blob-two {
+        top: -21rem;
+        right: 15rem;
+        z-index: -1;
+    }
+}
+
+@media screen and (min-width:700px) {
+    .blob-one {
+        top: 12rem;
+        left: 20rem;
+    }
+
+    .blob-two {
+        top: -20rem;
+        right: 20rem;
+    }
+}
