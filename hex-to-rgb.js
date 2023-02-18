@@ -77,9 +77,9 @@ hexId.addEventListener('input', function () {
     const result = re.exec(usersHexCode);
 
     if (result != null) {
-        const hexCode = HexToRgb(usersHexCode);
-        rgbId.value = hexCode;
-        colorCircle.style.backgroundColor = hexCode;
+        const newRgbCode = HexToRgb(usersHexCode);
+        rgbId.value = newRgbCode;
+        colorCircle.style.backgroundColor = newRgbCode;
     }
 
 });
