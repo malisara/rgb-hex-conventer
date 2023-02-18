@@ -1,7 +1,12 @@
 "use strict";
 
+const rgbId = document.getElementById('rgbInput');
+const hexId = document.getElementById('hexInput');
+const colorCircle = document.getElementById('circle');
+
 const hexArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
 const random_color_btn = document.getElementById('random-color-btn');
+
 random_color_btn.addEventListener('click', function () {
     let randomHexColor = '#';
 
@@ -9,9 +14,9 @@ random_color_btn.addEventListener('click', function () {
         randomHexColor += hexArray[getRandomHexArrayIndex()];
     }
 
-    document.getElementById('circle').style.backgroundColor = randomHexColor;
-    document.getElementById('hexInput').value = randomHexColor;
-    document.getElementById('rgbInput').value = HexToRgb(randomHexColor);
+    colorCircle.style.backgroundColor = randomHexColor;
+    hexId.value = randomHexColor;
+    rgbId.value = HexToRgb(randomHexColor);
 }
 
 );
@@ -63,3 +68,18 @@ function HexToRgbArray(HexCode) {
     }
     return rgbArray;
 }
+
+
+hexId.addEventListener('input', function () {
+    // change color & rgb code when user types a valid hex code
+    const usersHexCode = this.value;
+    const re = /^#([a-f]|[0-9]){6}$/i;
+    const result = re.exec(usersHexCode);
+
+    if (result != null) {
+        const hexCode = HexToRgb(usersHexCode);
+        rgbId.value = hexCode;
+        colorCircle.style.backgroundColor = hexCode;
+    }
+
+});
