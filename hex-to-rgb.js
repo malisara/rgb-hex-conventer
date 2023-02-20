@@ -83,3 +83,46 @@ hexId.addEventListener('input', function () {
     }
 
 });
+
+function rgbToHex(UsersRbgCode) {
+    const partialHex = ["A", "B", "C", "D", "E", "F"];
+    const partialRgb = [10, 11, 12, 13, 14, 15];
+    let hexValue = '#';
+    const rgbArray = UsersRbgCode.slice(4, -1).split(',');
+
+    for (let i = 0; i < rgbArray.length; i++) {
+        var firstNumber = Math.floor(rgbArray[i] / 16);
+
+        if (firstNumber >= 10) {
+            hexValue += partialHex[partialRgb.indexOf(firstNumber)];
+        }
+        else {
+            hexValue += firstNumber;
+        }
+
+        var secondNumber = rgbArray[i] % 16;
+
+        if (secondNumber >= 10) {
+            hexValue += partialHex[partialRgb.indexOf(secondNumber)];
+        }
+        else {
+            hexValue += secondNumber;
+        }
+
+    }
+    return hexValue;
+}
+
+
+rgbId.addEventListener('input', function () {
+    const usersRgbCode = this.value;
+    const re = /^rgb\(\d{1,3}\,\s?\d{1,3}\,\s?\d{1,3}\)$/i;
+    const result = re.exec(usersRgbCode);
+
+    if (result != null) {
+        const newHexCode = rgbToHex(usersRgbCode);
+        hexId.value = newHexCode;
+        colorCircle.style.backgroundColor = newHexCode;
+    }
+
+});
